@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <string.h>
+// Define a structure for weather data
+{
+    char location[50];
+    float temperature;
+    float humidity;
+    char weatherCondition[20];
+} WeatherData;
+// Function to display weather forecast
+void displayWeatherForecast(WeatherData weatherData)
+{
+    printf("Weather Forecast for %s:\n", weatherData.location);
+    printf("Temperature: %.2f°C\n", weatherData.temperature);
+    printf("Humidity: %.2f%%\n", weatherData.humidity);
+    printf("Weather Condition: %s\n", weatherData.weatherCondition);
+}
+int main() 
+{
+    // Define an array of weather data for different locations
+    WeatherData weatherData[] = {
+        {"Ahmedabad", 25.0, 60.0, "Sunny"},
+        {"Vadodara", 28.0, 50.0, "Cloudy"},
+        {"Surat", 20.0, 70.0, "Rainy"},
+        {"Jamnagar", 30.0, 40.0, "Hot"}
+    };
+      int numLocations = sizeof(weatherData) / sizeof(weatherData[0]);
+      // Prompt user to select a location
+      printf("Select a location (1-%d): ", numLocations);
+      int selection;
+      scanf("%d", &selection);
+// Validate user input
+if (selection >= 1 && selection <= numLocations)
+{
+// Display weather forecast for selected location
+  displayWeatherForecast(weatherData[selection - 1]);
+  printf("Weather Forecast for %s:\n", selectedWeatherData.location);
+  printf("Temperature: %.2f°C\n", selectedWeatherData.temperature);
+  printf("Humidity: %.2f%%\n", selectedWeatherData.humidity);
+  printf("Weather Condition: %s\n", selectedWeatherData.weatherCondition);
+} 
+else
+{
+  printf("Invalid selection. Please try again.\n");
+}
+return 0;
+}
